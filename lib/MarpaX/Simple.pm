@@ -112,6 +112,11 @@ L<Marpa::R2> (the scanless interface) by reducing the process to a single
 function call: C<gen_parser>.
 
 
+=head1 TODO
+
+Allow customizing error message/behavior.
+
+
 =head1 SEE ALSO
 
 L<Marpa::R2>
