@@ -22,8 +22,16 @@ $SPEC{gen_parser} = {
             pos => 0,
         },
         actions => {
-            summary => '',
+            summary => 'Supply actions specified in the grammar',
             schema  => ['hash*', each_value => 'code*'],
+        },
+        trace_terminals => {
+            summary => "Will be passed to recognizer's constructor",
+            schema  => ['bool'],
+        },
+        trace_values => {
+            summary => "Will be passed to recognizer's constructor",
+            schema  => ['bool'],
         },
     },
     result_naked => 1,
@@ -49,6 +57,8 @@ sub gen_parser {
         my $recce = Marpa::R2::Scanless::R->new({
             grammar => $grammar,
             semantics_package => $pkg,
+            trace_terminals => $args{trace_terminals} ? 1:0,
+            trace_values    => $args{trace_values}    ? 1:0,
         });
         $recce->read(\$input);
         my $valref = $recce->value;
@@ -120,7 +130,7 @@ Support more grammar (L<Marpa::R2::Scanless::G>) options, e.g.:
 C<trace_file_handle>.
 
 Support more recognizer (L<Marpa::R2::Scanless::R>) options, e.g.:
-C<max_parses>, C<trace_terminals>, C<trace_values>, C<trace_file_handle>.
+C<max_parses>, C<trace_file_handle>.
 
 
 =head1 SEE ALSO
