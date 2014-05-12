@@ -25,6 +25,10 @@ $SPEC{gen_parser} = {
             summary => 'Supply actions specified in the grammar',
             schema  => ['hash*', each_value => 'code*'],
         },
+        too_many_earley_items => {
+            summary => "Will be passed to recognizer's constructor",
+            schema  => ['int*'],
+        },
         trace_terminals => {
             summary => "Will be passed to recognizer's constructor",
             schema  => ['bool'],
@@ -54,12 +58,15 @@ sub gen_parser {
     my $parser = sub {
         my $input = shift;
 
-        my $recce = Marpa::R2::Scanless::R->new({
+        my $rec_args = {
             grammar => $grammar,
             semantics_package => $pkg,
             trace_terminals => $args{trace_terminals} ? 1:0,
             trace_values    => $args{trace_values}    ? 1:0,
-        });
+        };
+        $rec_args->{too_many_earley_items} = $args{too_many_earley_items}
+            if $args{too_many_earley_items};
+        my $recce = Marpa::R2::Scanless::R->new($rec_args);
         $recce->read(\$input);
         my $valref = $recce->value;
         if (!defined($valref)) {
