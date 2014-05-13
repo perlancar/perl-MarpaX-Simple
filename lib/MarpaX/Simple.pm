@@ -22,7 +22,7 @@ $SPEC{gen_parser} = {
             pos => 0,
         },
         actions => {
-            summary => 'Supply actions specified in the grammar',
+            summary => 'Supply code for actions specified in the grammar',
             schema  => ['hash*', each_value => 'code*'],
         },
         too_many_earley_items => {
