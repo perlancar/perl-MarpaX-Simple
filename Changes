@@ -1,5 +1,10 @@
 Revision history for MarpaX-Simple
 
+0.02    2014-05-13 (SHARYANTO)
+
+        - Add options: too_many_earley_items, trace_terminals, trace_values.
+
+
 0.01    2014-05-10 (SHARYANTO)
 
         - First release. Extracted from SHARYANTO-Utils.
