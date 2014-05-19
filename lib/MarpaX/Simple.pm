@@ -1,5 +1,10 @@
 package MarpaX::Simple;
 
+use 5.010;
+use strict;
+use warnings;
+use Log::Any '$log';
+
 use Marpa::R2;
 use UUID::Random;
 
@@ -48,6 +53,7 @@ sub gen_parser {
 
     my %args = @_;
 
+    $log->tracef("Precomputing grammar ...");
     my $grammar = Marpa::R2::Scanless::G->new({source => \$args{grammar} });
     my $pkg = __PACKAGE__ . '::gen' . substr(UUID::Random::generate(), 0, 8);
     my $acts = $args{actions};
@@ -55,6 +61,7 @@ sub gen_parser {
         *{"$pkg\::$_"} = $acts->{$_};
     }
 
+    $log->tracef("Generating parser ...");
     my $parser = sub {
         my $input = shift;
 
