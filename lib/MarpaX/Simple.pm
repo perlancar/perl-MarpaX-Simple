@@ -1,5 +1,8 @@
 package MarpaX::Simple;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
@@ -10,9 +13,6 @@ use UUID::Random;
 
 use Exporter qw(import);
 our @EXPORT_OK = qw(gen_parser);
-
-# VERSION
-# DATE
 
 our %SPEC;
 
@@ -155,7 +155,7 @@ sub gen_parser {
 }
 
 1;
-# ABSTRACT: Generate Marpa-based parser
+# ABSTRACT:
 
 =head1 SYNOPSIS
 
