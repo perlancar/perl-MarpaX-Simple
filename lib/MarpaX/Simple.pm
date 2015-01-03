@@ -204,17 +204,6 @@ L<Marpa::R2> (the scanless interface) by reducing the process to a single
 function call: C<gen_parser>.
 
 
-=head1 TODO
-
-Allow customizing error message/behavior.
-
-Support more grammar (L<Marpa::R2::Scanless::G>) options, e.g.:
-C<trace_file_handle>.
-
-Support more recognizer (L<Marpa::R2::Scanless::R>) options, e.g.:
-C<max_parses>, C<trace_file_handle>.
-
-
 =head1 SEE ALSO
 
 L<Marpa::R2>
