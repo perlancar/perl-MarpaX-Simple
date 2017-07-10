@@ -6,7 +6,7 @@ package MarpaX::Simple;
 use 5.010001;
 use strict;
 use warnings;
-use Log::Any::IfLOG '$log';
+use Log::ger;
 
 use Marpa::R2;
 use UUID::Random;
