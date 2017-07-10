@@ -105,19 +105,19 @@ sub gen_parser {
             last;
         } elsif ($args{grammar_class_file}) {
             require File::ShareDir;
-            require File::Slurp::Tiny;
-            $bnf = File::Slurp::Tiny::read_file(
+            require File::Slurper;
+            $bnf = File::Slurper::read_text(
                 File::ShareDir::class_file(__PACKAGE__,
                                            $args{grammar_class_file}));
         } elsif ($args{grammar_module_file}) {
             require File::ShareDir;
-            require File::Slurp::Tiny;
-            $bnf = File::Slurp::Tiny::read_file(
+            require File::Slurper;
+            $bnf = File::Slurper::read_text(
                 File::ShareDir::module_file(__PACKAGE__,
                                             $args{grammar_module_file}));
         } elsif ($args{grammar_file}) {
-            require File::Slurp::Tiny;
-            $bnf = File::Slurp::Tiny::read_file($args{grammar_file});
+            require File::Slurper;
+            $bnf = File::Slurper::read_text($args{grammar_file});
         } elsif ($args{grammar}) {
             $bnf = $args{grammar};
         }
