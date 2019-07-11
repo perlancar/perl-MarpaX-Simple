@@ -1,4 +1,4 @@
-0.07    2017-07-10 (PERLANCAR)
+0.07    2017-07-10  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -7,7 +7,7 @@
 	- Replace Log::Any with Log::ger.
 
 
-0.06    2015-09-03 (PERLANCAR)
+0.06    2015-09-03  Released-By: PERLANCAR
 
 	- No functional changes.
 
@@ -16,32 +16,32 @@
 	  requirement.
 
 
-0.05    2015-08-17 (PERLANCAR)
+0.05    2015-08-17  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Switch from Log::Any to Log::Any::IfLOG.
 
 
-0.04    2015-01-03 (PERLANCAR)
+0.04    2015-01-03  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Rebuild (Generate TODO.md).
 
 
-0.03    2014-05-24 (SHARYANTO)
+0.03    2014-05-24  Released-By: SHARYANTO
 
         - Add arguments slif_grammar, grammar_class_file, grammar_module_file,
           grammar_file.
 
 
-0.02    2014-05-13 (SHARYANTO)
+0.02    2014-05-13  Released-By: SHARYANTO
 
         - Add options: too_many_earley_items, trace_terminals, trace_values.
 
 
-0.01    2014-05-10 (SHARYANTO)
+0.01    2014-05-10  Released-By: SHARYANTO
 
         - First release. Extracted from SHARYANTO-Utils.
 
